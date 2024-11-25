@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
 // telling my router that I have this model
-let Movie = require('../model/movie.js');
-const movie = require('../model/movie.js');
+let Movie = require('../model/movie')
+const movie = require('../model/movie')
 let movieController = require('../controllers/movie.js')
 /* Get route for the book list - Read Operation */
 /*
@@ -17,7 +17,7 @@ try{
     const MovieList = await Movie.find();
     res.render('Movie/list',{
         title:'Movies',
-        Movieist:MovieList
+        MovieList:MovieList
     })}
     catch(err){
         console.error(err);
@@ -45,9 +45,9 @@ router.get('/add',async(req,res,next)=>{
 router.post('/add',async(req,res,next)=>{
     try{
         let newMovie = Movie({
-            "Name":req.body.Name,
-            "Author":req.body.Author,
-            "Published":req.body.Published,
+            "Movie Title":req.body.MovieTitle,
+            "Director":req.body.Director,
+            "Year Published":req.body.YearPublished,
             "Description":req.body.Description,
             "Price":req.body.Price
         });
@@ -58,7 +58,7 @@ router.post('/add',async(req,res,next)=>{
     catch(err)
     {
         console.error(err);
-        res.render('Movie/list',{
+        res.render('/movieslist',{
             error:'Error on the server'
         })
     }
@@ -87,19 +87,19 @@ router.post('/edit/:id',async(req,res,next)=>{
         let id=req.params.id;
         let updatedMovie = Movie({
             "_id":id,
-            "Name":req.body.Name,
-            "Author":req.body.Author,
-            "Published":req.body.Published,
+            "Movie Title":req.body.MovieTitle,
+            "Director":req.body.Director,
+            "Year Published":req.body.YearPublished,
             "Description":req.body.Description,
             "Price":req.body.Price
         });
         Movie.findByIdAndUpdate(id,updatedMovie).then(()=>{
-            res.redirect('/moviesslist')
+            res.redirect('/movieslist')
         })
     }
     catch(err){
         console.error(err);
-        res.render('Movie/list',{
+        res.render('/movieslist',{
             error:'Error on the server'
         })
     }
@@ -114,7 +114,7 @@ router.get('/delete/:id',async(req,res,next)=>{
     }
     catch(error){
         console.error(err);
-        res.render('Movie/list',{
+        res.render('/movieslist',{
             error:'Error on the server'
         })
     }

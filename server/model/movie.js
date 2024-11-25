@@ -10,6 +10,6 @@ let movieModel = mongoose.Schema({
     Price: Number
 },
 {
-    collection:"Bio_movies"
+    collection:"Bio_Movies"
 });
-module.exports =mongoose.model('movie',movieModel);
+module.exports =mongoose.model('Movie',movieModel);

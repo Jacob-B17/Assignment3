@@ -21,6 +21,10 @@ router.get('/products', function(req, res, next) {
 router.get('/service', function(req, res, next) {
   res.render('index', { title: 'Service' });
 });
+/* GET Movie page. */
+router.get('/movieslist', function(req, res, next) {
+  res.render('index', { title: 'Movie' });
+});
 /* GET contactus page. */
 router.get('/contactus', function(req, res, next) {
   res.render('index', { title: 'Contact Us' });
