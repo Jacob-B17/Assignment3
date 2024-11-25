@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 
-let bookModel = mongoose.Schema({
+let movieModel = mongoose.Schema({
     Name: String,
     Author: String,
     Published: String,
@@ -12,4 +12,4 @@ let bookModel = mongoose.Schema({
 {
     collection:"Bio_movies"
 });
-module.exports =mongoose.model('movie',bookModel);
+module.exports =mongoose.model('movie',movieModel);
