@@ -3,9 +3,10 @@
 const mongoose = require("mongoose");
 
 let movieModel = mongoose.Schema({
-    Name: String,
-    Author: String,
-    Published: String,
+    MovieTitle: String,
+    Type:String,
+    Director: String,
+    YearPublished: String,
     Description: String,
     Price: Number
 },

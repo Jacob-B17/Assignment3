@@ -45,9 +45,10 @@ router.get('/add',async(req,res,next)=>{
 router.post('/add',async(req,res,next)=>{
     try{
         let newMovie = Movie({
-            "Movie Title":req.body.MovieTitle,
+            "MovieTitle":req.body.MovieTitle,
+            "Type":req.body.Type,
             "Director":req.body.Director,
-            "Year Published":req.body.YearPublished,
+            "YearPublished":req.body.YearPublished,
             "Description":req.body.Description,
             "Price":req.body.Price
         });
@@ -87,9 +88,10 @@ router.post('/edit/:id',async(req,res,next)=>{
         let id=req.params.id;
         let updatedMovie = Movie({
             "_id":id,
-            "Movie Title":req.body.MovieTitle,
+            "MovieTitle":req.body.MovieTitle,
+            "Type":req.body.Type,
             "Director":req.body.Director,
-            "Year Published":req.body.YearPublished,
+            "YearPublished":req.body.YearPublished,
             "Description":req.body.Description,
             "Price":req.body.Price
         });

@@ -1,0 +1,51 @@
+<%- include Partials/header.ejs%>
+<%- include Partials/main_nav.ejs%>
+
+<main class="container mt-5 pb-5"> 
+    <!-- Title Section -->
+    <div class="text-center mb-4">
+        <h1>Contact Me</h1>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Form Card -->
+            <div class="card p-4 shadow-sm">
+                <form action="mailto:jacob.bryan@ontariotechu.net" method="post" enctype="text/plain" name="form">
+                    <!-- Name Field -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Complete Name" required>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email Address" required>
+                    </div>
+
+                    <!-- Comments Field -->
+                    <div class="mb-3">
+                        <label for="comments" class="form-label">Comments</label>
+                        <textarea class="form-control" name="comments" id="comments" rows="4" placeholder="Your comments"></textarea>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" required>
+                    </div>
+
+                    <!-- Submit and Reset Buttons -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include Partials/footer.ejs%>
