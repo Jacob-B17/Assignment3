@@ -58,7 +58,7 @@ router.post('/add',async(req,res,next)=>{
     catch(err)
     {
         console.error(err);
-        res.render('/movieslist',{
+        res.render('Movie/list',{
             error:'Error on the server'
         })
     }
@@ -99,7 +99,7 @@ router.post('/edit/:id',async(req,res,next)=>{
     }
     catch(err){
         console.error(err);
-        res.render('/movieslist',{
+        res.render('Movies/list',{
             error:'Error on the server'
         })
     }
@@ -114,7 +114,7 @@ router.get('/delete/:id',async(req,res,next)=>{
     }
     catch(error){
         console.error(err);
-        res.render('/movieslist',{
+        res.render('Movie/list',{
             error:'Error on the server'
         })
     }
